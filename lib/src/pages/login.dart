@@ -5,14 +5,6 @@ import 'package:go_router/go_router.dart';
 
 void main() => runApp(LoginApp());
 
-bool validateNumeric(String value) {
-  final numericRegex = RegExp(r'^[0-9]+$');
-  return numericRegex.hasMatch(value);
-}
-
-List<String> _sexOptions = ['Masculino', 'Femenino'];
-String? _selectedSex;
-
 class RutasPage extends StatelessWidget {
   const RutasPage({super.key});
 
@@ -46,24 +38,20 @@ class LoginApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: RegisterPage(),
     );
   }
 }
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _usernameController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
-  TextEditingController _celularController = TextEditingController();
-  TextEditingController _VerificatePassword = TextEditingController();
-  TextEditingController _birthdateController = TextEditingController();
-  TextEditingController _sexoController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
